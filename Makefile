@@ -1,6 +1,5 @@
 lib.name = imclab
 s2p.class.sources := s2p.c
-sss.class.sources := sss.c
 #datafiles =
 
 PDLIBBUILDER_DIR=../pd-lib-builder

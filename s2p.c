@@ -12,12 +12,13 @@ typedef struct _s2p {
 
 void s2p_float(t_s2p *x, t_floatarg f)
 {
-  post("Hello world !!");
+  outlet_float(x->x_obj.ob_outlet, f);
 }
 
 void *s2p_new(void)
 {
   t_s2p *x = (t_s2p *)pd_new(s2p_class);
+  outlet_new(&x->x_obj, &s_float);
   return (void *)x;
 }
 

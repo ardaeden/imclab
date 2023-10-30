@@ -1,17 +1,14 @@
 #include "m_pd.h"
 
-
 static t_class *s2p_class;
-
 
 typedef struct _s2p {
   t_object  x_obj;
   t_atom outList[5];
   t_int index;
+  t_float limit;
   t_outlet *l_out;
 } t_s2p;
-
-
 
 void s2p_float(t_s2p *x, t_floatarg f)
 {
@@ -27,10 +24,10 @@ void *s2p_new(void)
 {
   t_s2p *x = (t_s2p *)pd_new(s2p_class);
   x->index = 0;
-  x->l_out=outlet_new(&x->x_obj, gensym("list"));
+  floatinlet_new(&x->x_obj, &x->limit);
+  x->l_out=outlet_new(&x->x_obj, &s_list);
   return (void *)x;
 }
-
 
 void s2p_setup(void) {
   /* create a new class */

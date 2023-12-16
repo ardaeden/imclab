@@ -1,4 +1,4 @@
-//By Arda Eden
+//By Arda Eden 2023
 #include "m_pd.h"
 
 static t_class *s2p_class;
@@ -38,6 +38,6 @@ void s2p_setup(void) {
 
                         sizeof(t_s2p),
                         CLASS_DEFAULT,
-			A_DEFFLOAT, 0);
+			                  A_DEFFLOAT, 0);
   class_addfloat(s2p_class, s2p_float);
 }
